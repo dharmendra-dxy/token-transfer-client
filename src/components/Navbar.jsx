@@ -1,8 +1,11 @@
 import React from 'react'
 import Button from './Button'
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useNavigate } from 'react-router';
 
 const Navbar = () => {
+
+    const nav = useNavigate();
 
     const navLinks = [
         {title: "Home", link: "/"},
@@ -40,6 +43,7 @@ const Navbar = () => {
         <div className='hidden lg:block'>
             <Button
                 title={"Login"}
+                onClick= {()=> nav('/login')}
             />
         </div>
 

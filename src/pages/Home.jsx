@@ -2,8 +2,12 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router'
 
 const Home = () => {
+
+    const nav = useNavigate();       
+
   return (
     <div>
         
@@ -21,10 +25,13 @@ const Home = () => {
                     </h1>
                     <p className='text-lg text-center lg:w-full lg:text-start w-64 mt-10 md:mt-5 text-gray-700'>A fun project based on real working of payment app</p>
 
+                    <div>
                     <Button 
                     title='Check Out'
                     classProp="mt-10 lg:mt-4"
+                    onClick={()=> nav('/signup')}
                     />
+                    </div>
                 </div>
 
                 <div className='flex items-center justify-center mt-10 lg:mt-0'> 

@@ -1,6 +1,6 @@
-import React from 'react'
 import AppBar from '../components/AppBar'
 import User from '../components/User'
+import Footer from '../components/Footer'
 
 const Dashboard = () => {
   return (
@@ -14,7 +14,15 @@ const Dashboard = () => {
         <p className='text-lg'> <span className='font-medium'>Balance</span> 8000 </p>
 
         <User/>
+
       </div>
+
+      <div className='bg-gray-100'>
+        <div className='container mx-auto px-5 md:px-20 lg:px-48'>
+          <Footer/>
+        </div>
+      </div>
+
     
     </>
   )

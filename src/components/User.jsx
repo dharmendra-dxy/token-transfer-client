@@ -1,8 +1,12 @@
 import React from 'react'
-import { FaSearch } from 'react-icons/fa'
 import Button from "../components/Button";
+import { FaSearch } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
+
 
 const User = () => {
+
+    const nav= useNavigate();
 
     const userDetails = [
         {username: "Dharmendra", email: "d@gmial.com"},
@@ -45,6 +49,7 @@ const User = () => {
                         <div className='text-xs lg:text-base'>
                             <Button
                                 title="Send Money"
+                                onClick={()=> nav('/send')}
                             />
                         </div>
                     </div>

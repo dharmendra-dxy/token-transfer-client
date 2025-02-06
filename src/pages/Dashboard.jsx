@@ -9,9 +9,17 @@ const Dashboard = () => {
 
       <div className='container mx-auto px-5 md:px-16 xl:px-48 mt-10'>
         
-        <p className='text-lg'> <span className='font-medium'>Name</span> Dharmendra </p>
-        <p className='text-lg'> <span className='font-medium'>Email</span> d@gmial.com </p>
-        <p className='text-lg'> <span className='font-medium'>Balance</span> 8000 </p>
+        <div>
+          <p className='text-4xl font-bold'>
+            Hello, <span className='text-green-500'>Dharmendra</span>
+          </p>
+          
+          <p className='text-2xl font-bold mt-3'>
+            Balance Rs.<span className='text-green-500'>7000</span>
+          </p>
+
+          <p className='text-sm text-gray-400 '>dharmndra@gmial.com</p>
+        </div>
 
         <User/>
 

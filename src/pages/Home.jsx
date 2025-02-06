@@ -29,7 +29,7 @@ const Home = () => {
                     <Button 
                     title='Check Out'
                     classProp="mt-10 lg:mt-4"
-                    onClick={()=> nav('/signup')}
+                    onClick={()=> nav('/dashboard')}
                     />
                     </div>
                 </div>

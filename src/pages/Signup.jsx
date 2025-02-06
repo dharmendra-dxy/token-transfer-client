@@ -13,22 +13,29 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [loding, setLoding] = useState(false);
   
-  const handleSignup = async ()=> {
-
+  const handleSignup = async (e)=> {
+    e.preventDefault();
     try {
+      setLoding(true);
+
       // call backend:
       const res = await axios.post("http://localhost:8000/api/v1/user/signup", {
         username,
         email,
         password,
+      },{
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        withCredentials: true,
       });
+
       console.log( "response: ", res.data);
 
-      // set user token in local storage:
-      localStorage.setItem("token", res.data.token);
+      // set user state in redux:
+
     } 
     catch (error) {
       console.log("Erorr while signup: ", error.response.data);
@@ -40,7 +47,7 @@ const Signup = () => {
     setPassword("");
 
     // navigate to login:
-    // nav('/login');
+    nav('/dashboard');
   }
 
 

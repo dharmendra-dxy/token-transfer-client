@@ -21,12 +21,16 @@ const Login = () => {
       const res = await axios.post("http://localhost:8000/api/v1/user/login", {
         email,
         password,
+      },{
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true,
       });
 
       console.log("response: ", res.data);
 
-      // set user token in local storage:
-      localStorage.setItem("token", res.data.token);
+      // set user state in redux:
 
     } 
     catch (error) {
@@ -38,7 +42,7 @@ const Login = () => {
     setPassword("");
 
     // navigate to dashboard:
-    // nav('/dashboard');
+    nav('/dashboard');
 
   }
 
